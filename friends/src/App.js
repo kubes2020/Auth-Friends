@@ -25,6 +25,7 @@ function App() {
       </header>
       <Link to="/login">Login</Link>
       <Route path="/login" component={Login} />
+      <Route path="/" component={App} />
     </div>
     </Router>
   );

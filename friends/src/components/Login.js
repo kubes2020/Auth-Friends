@@ -17,9 +17,11 @@ export const Login = () => {
 
     const login = (e) =>{
         e.preventDefault()
-        axios.post("http://localhost:5000/api/login", credentials)
+        axios.post("http://localhost:5000/api/login", { username: "lambda", password: "school" })
         .then((res) =>{
             console.log("res from login", res)
+            window.localStorage.setItem('token')
+            props.history.push("/protected")
         })
         .catch((err) =>{
             console.log("error with login", err)
@@ -35,6 +37,7 @@ export const Login = () => {
             <input 
             name="username" 
             id="username" 
+            type="text"
             onChange={handleChange} 
             value={formState.credentials.username}
             ></input>
@@ -45,10 +48,12 @@ export const Login = () => {
             <input 
             name="password" 
             id="password" 
+            type="password"
             onChange={handleChange} 
             value={formState.credentials.password}
             ></input>
             </label>
+            <button>Log In</button>
         </form>
 
         </>
