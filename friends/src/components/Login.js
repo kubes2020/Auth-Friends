@@ -2,22 +2,21 @@ import React, { useState } from "react";
 import axios from "axios";
 
 
-export const Login = () => {
-    const [formState, setFormState] = useState({
-        credentials: {
+export const Login = (props) => {
+    
+    const [credentials, setCredentials] = useState({
             username: "",
             password: "",
-        }
     })
 
     const handleChange = (e) =>{
         e.persist()
-        setFormState({...credentials, [e.target.name]: e.target.value})
+        setCredentials({...credentials, [e.target.name]: e.target.value})
     }
 
     const login = (e) =>{
         e.preventDefault()
-        axios.post("http://localhost:5000/api/login", { username: "lambda", password: "school" })
+        axios.post("http://localhost:5000/api/login", credentials)
         .then((res) =>{
             console.log("res from login", res)
             window.localStorage.setItem('token')
@@ -39,7 +38,7 @@ export const Login = () => {
             id="username" 
             type="text"
             onChange={handleChange} 
-            value={formState.credentials.username}
+            value={credentials.username}
             ></input>
             </label>
         </form>
@@ -50,7 +49,7 @@ export const Login = () => {
             id="password" 
             type="password"
             onChange={handleChange} 
-            value={formState.credentials.password}
+            value={credentials.password}
             ></input>
             </label>
             <button>Log In</button>
