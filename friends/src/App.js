@@ -1,9 +1,13 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { Login } from './components/Login';
+import { BrowserRouter as Router } from "react-router-dom";
 
 function App() {
   return (
+    <Router>
+      <h1>Test App.js</h1>
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -19,7 +23,10 @@ function App() {
           Learn React
         </a>
       </header>
+      <Link to="/login">Login</Link>
+      <Route path="/login" component={Login} />
     </div>
+    </Router>
   );
 }
 
