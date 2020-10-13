@@ -16,6 +16,7 @@ export const Login = (props) => {
 
     const login = (e) =>{
         e.preventDefault()
+        console.log('test')
         axios.post("http://localhost:5000/api/login", credentials)
         .then((res) =>{
             console.log("res from login", res)
@@ -27,12 +28,25 @@ export const Login = (props) => {
         })
     }
 
+    // const login = (e) =>{
+    //     e.preventDefault()
+    //     axios.post("/login", credentials)
+    //     .then((res) =>{
+    //         console.log("res from login", res)
+    //         window.localStorage.setItem('token')
+    //         props.history.push("/protected")
+    //     })
+    //     .catch((err) =>{
+    //         console.log("error with login", err)
+    //     })
+    // }
+
 
     return(
         <>
         <h1>Test Login.js</h1>
         <form onSubmit={login}>
-            <label forHtml="username">Username:
+            <label htmlFor="username">Username:
             <input 
             name="username" 
             id="username" 
@@ -43,7 +57,7 @@ export const Login = (props) => {
             </label>
         </form>
         <form>
-            <label forHtml="password">Password:
+            <label htmlFor="password">Password:
             <input 
             name="password" 
             id="password" 
