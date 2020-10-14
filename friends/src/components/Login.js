@@ -31,7 +31,7 @@ export const Login = (props) => {
 
     return(
         <>
-        <h1>Test Login.js</h1>
+        <h1>Login</h1>
         <form onSubmit={login}>
             <label htmlFor="username">Username:
             <input 

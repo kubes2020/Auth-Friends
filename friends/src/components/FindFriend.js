@@ -4,8 +4,12 @@ import {axiosWithAuth} from "./utils/axiosWithAuth";
 
 export const FindFriend = () => {
     const [findFriend, setFindFriend] = useState()
-    const [myFriend, setMyFriend] = useState({})
-    
+    const [myFriend, setMyFriend] = useState({
+        name: "",
+        age: "",
+        id: "",
+        email: "",
+    })
 
     const handleChange = (e) => {
         setFindFriend(e.target.value)
@@ -17,12 +21,13 @@ export const FindFriend = () => {
         .then((res)=>{
             console.log("yes one friend", res.data)
             setMyFriend(res.data)
-            setFindFriend("")
+            // setFindFriend("")
         })
         .catch((err) =>{
             console.log("erros getting one friend", err)
         })
     }
+    console.log("myFriend!", myFriend)
 
     return(
         <>
@@ -38,7 +43,9 @@ export const FindFriend = () => {
             </label>
             <button>Submit</button>
         </form>
-        <h2>Name:{myFriend.name} Age:{myFriend.age} Id:{myFriend.id}</h2>
+        {findFriend ? 
+        <h2>Name:{myFriend.name} Age:{myFriend.age} Id:{myFriend.id}</h2> : null
+        }
         </>
     )
 }
