@@ -17,6 +17,7 @@ export const FindFriend = () => {
         .then((res)=>{
             console.log("yes one friend", res.data)
             setMyFriend(res.data)
+            setFindFriend("")
         })
         .catch((err) =>{
             console.log("erros getting one friend", err)
@@ -25,7 +26,7 @@ export const FindFriend = () => {
 
     return(
         <>
-        <h1>Test Find Friend</h1>
+        <h1>Find Friend</h1>
         <form onSubmit={handleSubmit}>
             <label htmlFor="findFriend">Find Friend With Id#
             <input

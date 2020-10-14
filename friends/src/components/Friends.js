@@ -20,7 +20,7 @@ export const Friends = () => {
         <>
             <h2>Friends Page</h2>
             {friends.map(friend => (
-                <h3>Name: {friend.name}, Age: {friend.age}, Id: {friend.id}</h3>
+                <h3 key={friend.id}>Name: {friend.name}, Age: {friend.age}, Id: {friend.id}</h3>
             ))
             }
 
