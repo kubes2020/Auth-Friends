@@ -9,7 +9,7 @@ export const Friends = () => {
         axiosWithAuth().get("/friends")
         .then((res)=>{
             console.log("yes friends", res.data)
-            setFriends([...friends, res.data])
+            setFriends(...friends, res.data)
         })
         .catch((err) =>{
             console.log("erros getting friends", err)
@@ -20,7 +20,7 @@ export const Friends = () => {
         <>
             <h2>Friends Page</h2>
             {friends.map(friend => (
-                <h2>{friend.name}</h2>
+                <h3>Name: {friend.name}, Age: {friend.age}, Id: {friend.id}</h3>
             ))
             }
 
