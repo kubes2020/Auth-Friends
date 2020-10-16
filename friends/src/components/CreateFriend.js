@@ -41,7 +41,7 @@ export const CreateFriend = () => {
             value={newFriend.name}
             ></input>
             </label>
-            <label htmlFor="age">Name:
+            <label htmlFor="age">Age:
             <input
             name="age"
             id="age"
@@ -49,7 +49,7 @@ export const CreateFriend = () => {
             value={newFriend.age}
             ></input>
             </label>
-            <label htmlFor="email">Name:
+            <label htmlFor="email">Email:
             <input
             name="email"
             id="email"

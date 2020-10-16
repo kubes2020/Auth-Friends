@@ -26,6 +26,7 @@ function App() {
           <Link to="/friends/create">Create Friend</Link>
         </li>
       </ul>
+      <h5>FYI - username: lambda  password: school</h5>
     <div className="App">
       <PrivateRoute exact path="/friends" component={Friends}/>
       <PrivateRoute exact path="/friends/id" component={FindFriend}/>

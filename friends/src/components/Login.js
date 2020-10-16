@@ -20,7 +20,7 @@ export const Login = (props) => {
         .then((res) =>{
             console.log("res from login", res)
             window.localStorage.setItem('token', res.data.payload)
-            props.history.push("/protected")
+            props.history.push("/friends")
         })
         .catch((err) =>{
             console.log("error with login", err)
